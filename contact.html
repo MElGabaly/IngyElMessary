@@ -116,12 +116,35 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
                       type="email"
                       class="form-control"
                       id="email"
                       placeholder="Email"
                       required
                     />
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option selected disabled
+                        >Please select the reason for contact, if "Other"
+                        specify in the message</option
+                      >
+                      <option>Make A New Friend</option>
+                      <option>Exchange Ideas</option>
+                      <option>Job Opportunity</option>
+                      <option>Freelancing</option>
+                      <option>Service Request</option>
+                      <option>Other</option>
+                    </select>
                   </div>
                   <div class="form-group">
                     <input
