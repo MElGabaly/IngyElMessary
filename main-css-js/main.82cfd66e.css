@@ -4891,9 +4891,11 @@ main {
   margin-bottom: 30px;
   overflow: hidden;
 }
-.site-brand,
+
 .site-logo {
-  margin-bottom: 6px;
+  margin-bottom: 0;
+  height: 55%;
+  width: 55%;
 }
 .site-brand {
   color: #000;
@@ -4901,6 +4903,7 @@ main {
   font-size: 18px;
   font-weight: 700;
   display: block;
+  line-height: 22px;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
