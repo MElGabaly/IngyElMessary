@@ -20,6 +20,7 @@
     <title>IngyElMessary | Home</title>
 
     <link href="./main-css-js/main.82cfd66e.css" rel="stylesheet" />
+    <link href="./main-css-js/selector.css" rel="stylesheet" />
     <link href="./main-css-js/custom-styling.css" rel="stylesheet" />
   </head>
 
@@ -88,13 +89,21 @@
     </header>
     <main class="" id="main-collapse">
       <!-- Add your site or app content here -->
+      <div class="row">
+        <div class="portfolioFilter">
+          <ul>
+            <li><a class="filter-button active" href="#" data-filter="*">All</a></li>
+            <li><a class="filter-button" href="#" data-filter=".projects">Projects</a></li>
+            <li class="last"><a class="filter-button" href="#" data-filter=".SA">Selective Assignments</a></li>
+          </ul>
+        </div>
 
-      <div class="hero-full-wrapper">
-        <div class="grid">
-          <div class="gutter-sizer"></div>
-          <div class="grid-sizer"></div>
+      <div class="hero-full-wrappe">
+          <div class="grid portfolioContainer">
+              <div class="gutter-sizer"></div>
+              <div class="grid-sizer"></div>
 
-          <div class="grid-item">
+          <div class="grid-item projects">
             <img
               class="img-responsive"
               alt=""
@@ -114,7 +123,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item projects">
             <img
               class="img-responsive"
               alt=""
@@ -130,7 +139,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -146,7 +155,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -162,7 +171,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -178,7 +187,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -194,7 +203,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img class="img-responsive" alt="" src="./assets/Garnier/3.png" />
             <a href="projects/Garnier.html" class="project-description">
               <div class="project-text-holder">
@@ -205,7 +214,7 @@
               </div>
             </a>
           </div>
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -221,7 +230,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img class="img-responsive" alt="" src="assets/Mainz/mainz8.gif" />
             <a href="projects/Mainz.html" class="project-description">
               <div class="project-text-holder">
@@ -233,7 +242,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -248,7 +257,7 @@
               </div>
             </a>
           </div>
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -264,7 +273,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img class="img-responsive" alt="" src="assets/Joy/joy-cover.png" />
             <a href="projects/Joy.html" class="project-description">
               <div class="project-text-holder">
@@ -275,7 +284,7 @@
               </div>
             </a>
           </div>
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -291,7 +300,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -306,7 +315,7 @@
               </div>
             </a>
           </div>
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img class="img-responsive" alt="" src="assets/MG/MG-PORT.png" />
             <a href="projects/MG.html" class="project-description">
               <div class="project-text-holder">
@@ -318,7 +327,7 @@
             </a>
           </div>
 
-          <div class="grid-item">
+          <div class="grid-item SA">
             <img
               class="img-responsive"
               alt=""
@@ -364,9 +373,14 @@
 </script>
 
 -->
+    <!--jquary min js-->
+    <script type="text/javascript" src="./main-css-js/jquery.min.js"></script>
+    <script src="./main-css-js/jquery.isotope.js" type="text/javascript"></script>
+    <script src="./main-css-js/selector.js"></script>
     <script
       type="text/javascript"
       src="./main-css-js/main.85741bff.js"
     ></script>
+    
   </body>
 </html>

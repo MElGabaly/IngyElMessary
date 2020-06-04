@@ -1,0 +1,62 @@
+/*----------------------------------------------------
+	 Protfolio Style
+------------------------------------------------------*/
+.portfolioFilter {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.portfolioFilter ul {
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+  margin-bottom: 60px;
+}
+.portfolioFilter ul li {
+  display: inline-block;
+  margin: 0 -2px;
+  position: relative;
+}
+.portfolioFilter ul li:after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 10px;
+  background: #938b94;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -5px;
+}
+.portfolioFilter ul li.last:after {
+  background: #fff;
+}
+.portfolioFilter ul li a {
+  padding: 16px 30px;
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: bold;
+  color: #6f6470;
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  border-right: none;
+  letter-spacing: 2px;
+
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+
+.portfolioFilter ul li a:hover {
+  border-color: #cfcfcf;
+  color: #000;
+
+  transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+}
+
+.portfolioFilter ul li a.current {
+  border: solid 1px #fff;
+  color: #000;
+}
