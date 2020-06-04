@@ -4753,7 +4753,7 @@ button.close {
 .grid-item,
 .grid-sizer {
   width: 100%;
-  margin-bottom: 0.01%;
+  margin-bottom: 0%;
 }
 @media (min-width: 768px) {
   .grid-item,
@@ -4768,7 +4768,7 @@ button.close {
   }
 }
 .gutter-sizer {
-  width: 0.01%;
+  width: 0%;
 }
 .grid-item {
   position: relative;
