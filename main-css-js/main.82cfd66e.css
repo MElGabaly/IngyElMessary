@@ -4924,7 +4924,7 @@ main {
   font-weight: 700;
 }
 .nav > li > a:hover {
-  color: #ff6360;
+  color:rgb(248, 124, 186);
 }
 .nav-footer-social-buttons {
   margin-bottom: 0;
