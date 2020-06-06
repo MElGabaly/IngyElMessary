@@ -2,6 +2,10 @@
   font-family: JojoFont;
   src: url(BebasNeue-Bold.otf);
 }
+@font-face {
+  font-family: JojoFont-reg;
+  src: url(BebasNeue-Regular.ttf);
+}
 #product-name {
   font-family: JojoFont;
   color: white;
