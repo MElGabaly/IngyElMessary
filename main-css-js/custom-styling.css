@@ -32,5 +32,6 @@
   border-radius: 0;
 }
 .btn:hover {
-  color: #979497;
+  color: rgb(248, 124, 186);
+  background: black;
 }
