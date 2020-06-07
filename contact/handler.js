@@ -1,22 +1,6 @@
 "use strict";
 const AWS = require("aws-sdk");
 const SES = new AWS.SES();
-// module.exports.staticSiteMailer = async event => {
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify(
-//       {
-//         message: "Go Serverless v1.0! Your function executed successfully!",
-//         input: event
-//       },
-//       null,
-//       2
-//     )
-//   };
-
-//   // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-//   // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
-// };
 function sendEmail(formData, callback) {
   const emailParams = {
     Source: "ingyg@aucegypt.edu", // SES SENDING EMAIL
@@ -33,7 +17,7 @@ function sendEmail(formData, callback) {
       },
       Subject: {
         Charset: "UTF-8",
-        Data: "New message from your_site.com"
+        Data: "New message from ingyelmessary.com"
       }
     }
   };
@@ -49,7 +33,7 @@ module.exports.staticSiteMailer = (event, context, callback) => {
       statusCode: err ? 500 : 200,
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://ingyelmessary.com"
+        "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify({
         message: err ? err.message : data

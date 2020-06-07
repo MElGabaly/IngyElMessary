@@ -101,7 +101,7 @@
           <div class="section-container-spacer">
               <div class="row">
                   <div class="col-md-6">
-            <form action="https://kfe53p9i79.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer" class="reveal-content" method="POST">
+            <form action="{{https://kfe53p9i79.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer}}" class="reveal-content" method="POST">
                   <div class="form-group">
                     <input
                       type="text"
@@ -231,10 +231,14 @@
 </script>
 
 -->
+    <script
+      type="text/javascript"
+      src="../main-css-js/main.85741bff.js"
+    ></script>
     <script>
       (() => {
         const form = document.querySelector('form');
-        const formResponse = document.querySelector('js-form-response');
+        const formResponse = document.getElementById('js-form-response');
       
         form.onsubmit = e => {
           e.preventDefault();
@@ -271,9 +275,5 @@
         };
       })()
     </script>
-    <script
-      type="text/javascript"
-      src="../main-css-js/main.85741bff.js"
-    ></script>
   </body>
 </html>
