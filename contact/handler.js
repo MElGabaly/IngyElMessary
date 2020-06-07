@@ -17,7 +17,7 @@ function sendEmail(formData, callback) {
       },
       Subject: {
         Charset: "UTF-8",
-        Data: "New message from ingyelmessary.com"
+        Data: `${formData.subject} from ingyelmessary.com`
       }
     }
   };
