@@ -46,4 +46,5 @@
   text-transform: uppercase;
   font-weight: 600;
   border-radius: 0;
+  width: fit-content;
 }
