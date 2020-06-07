@@ -14,13 +14,13 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no" />
 
-    <link href="./assets/apple-icon-180x180.png" rel="apple-touch-icon" />
-    <link href="./assets/favicon.ico" rel="icon" />
+    <link href="../assets/apple-icon-180x180.png" rel="apple-touch-icon" />
+    <link href="../assets/favicon.ico" rel="icon" />
 
     <title>IngyElMessary | Contact</title>
 
-    <link href="./main-css-js/main.82cfd66e.css" rel="stylesheet" />
-    <link href="./main-css-js/custom-styling.css" rel="stylesheet" />
+    <link href="../main-css-js/main.82cfd66e.css" rel="stylesheet" />
+    <link href="../main-css-js/custom-styling.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -33,24 +33,24 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="./index.html" class="navbar-brand">Ingy's Portfolio</a>
+        <a href="../index.html" class="navbar-brand">Ingy's Portfolio</a>
       </div>
 
       <nav class="sidebar">
         <div class="navbar-collapse" id="navbar-collapse">
           <div class="site-header hidden-xs">
-            <a class="site-brand" href="./index.html" title="">
+            <a class="site-brand" href="../index.html" title="">
               <img
                 class="img-responsive site-logo"
                 alt=""
-                src="./main-css-js/logo-website.png"
+                src="../main-css-js/logo-website.png"
               />
             </a>
           </div>
           <ul class="nav">
-            <li><a href="index.html" title="">Home</a></li>
-            <li><a href="about.html" title="">About</a></li>
-            <li><a href="services.html" title="">Services</a></li>
+            <li><a href="../index.html" title="">Home</a></li>
+            <li><a href="../about.html" title="">About</a></li>
+            <li><a href="../services.html" title="">Services</a></li>
             <li><a href="contact.html" class="active" title="">Contact</a></li>
           </ul>
 
@@ -97,15 +97,16 @@
               laboris nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
+          
           <div class="section-container-spacer">
-            <form action="" class="reveal-content">
               <div class="row">
-                <div class="col-md-6">
+                  <div class="col-md-6">
+            <form action="https://kfe53p9i79.execute-api.us-east-1.amazonaws.com/dev/static-site-mailer" class="reveal-content" method="POST">
                   <div class="form-group">
                     <input
                       type="text"
                       class="form-control"
-                      id="name"
+                      name="name"
                       placeholder="Name"
                       required
                     />
@@ -114,26 +115,27 @@
                     <input
                       type="email"
                       class="form-control"
-                      id="email"
+                      name="reply_to"
                       placeholder="Email"
                       required
                     />
                   </div>
                   <div class="form-group">
-                    <select class="form-control">
+                    <select class="form-control" name="subject">
                       <option selected disabled
                         >Please select the reason for contact, if "Other"
                         specify in the message</option
                       >
-                      <option>Make A New Friend</option>
-                      <option>Exchange Ideas</option>
-                      <option>Job Opportunity</option>
-                      <option>Freelancing</option>
-                      <option>Service Request</option>
-                      <option>Other</option>
+                      <option value="Make A New Friend"
+                        >Make A New Friend</option
+                      >
+                      <option value="Exchange Ideas">Exchange Ideas</option>
+                      <option value="Job Opportunity">Job Opportunity</option>
+                      <option value="Service Request">Service Request</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <input
                       type="text"
                       class="form-control"
@@ -141,10 +143,11 @@
                       placeholder="Subject"
                       required
                     />
-                  </div>
+                  </div> -->
                   <div class="form-group">
                     <textarea
                       class="form-control"
+                      name="message"
                       rows="3"
                       placeholder="Enter your message"
                       required
@@ -154,7 +157,8 @@
                     Send
                   </button>
                 </div>
-
+              </form>
+                <p id="js-form-response"></p>
                 <div class="col-md-6">
                   <ul class="list-unstyled address-container">
                     <li>
@@ -227,9 +231,49 @@
 </script>
 
 -->
+    <script>
+      (() => {
+        const form = document.querySelector('form');
+        const formResponse = document.querySelector('js-form-response');
+      
+        form.onsubmit = e => {
+          e.preventDefault();
+      
+          // Prepare data to send
+          const data = {};
+          const formElements = Array.from(form);
+          formElements.map(input => (data[input.name] = input.value));
+      
+          // Log what our lambda function will receive
+          console.log(JSON.stringify(data));
+      
+          // Construct an HTTP request
+          var xhr = new XMLHttpRequest();
+          xhr.open(form.method, form.action, true);
+          xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+          xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      
+          // Send the collected data as JSON
+          xhr.send(JSON.stringify(data));
+      
+          // Callback function
+          xhr.onloadend = response => {
+            if (response.target.status === 200) {
+              // The form submission was successful
+              form.reset();
+              formResponse.innerHTML = 'Thanks for the message. I’ll be in touch shortly.';
+            } else {
+              // The form submission failed
+              formResponse.innerHTML = 'Something went wrong';
+              console.error(JSON.parse(response.target.response).message);
+            }
+          };
+        };
+      })()
+    </script>
     <script
       type="text/javascript"
-      src="./main-css-js/main.85741bff.js"
+      src="../main-css-js/main.85741bff.js"
     ></script>
   </body>
 </html>
